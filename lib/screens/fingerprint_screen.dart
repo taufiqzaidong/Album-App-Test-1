@@ -14,11 +14,11 @@ class FingerprintScreen extends StatelessWidget {
 
           if (weCanCheckBiometrics) {
             bool authenticated = await localAuth.authenticateWithBiometrics(
-              localizedReason: "Authenticate to see your bank statement.",
+              localizedReason: "Authenticate to your album gallery",
             );
             print(authenticated);
             if (authenticated) {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DashboardScreen(),
@@ -36,7 +36,7 @@ class FingerprintScreen extends StatelessWidget {
               size: 124.0,
             ),
             Text(
-              "Touch to Login",
+              "Touch to Authenticate",
               style: TextStyle(
                 fontSize: 64.0,
               ),
