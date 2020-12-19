@@ -1,11 +1,9 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'screens/fingerprint_screen.dart';
-import 'screens/pin_screen.dart';
-import 'screens/loading.dart';
+import 'package:album_app/screens/fingerprint.dart';
+import 'package:album_app/screens/pin.dart';
+import 'package:album_app/screens/loading.dart';
+import 'package:album_app/screens/dashboard.dart';
 
-import 'screens/dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import 'bloc/theme.dart';
 
@@ -14,7 +12,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(ThemeData.dark()),
+      create: (_) => ThemeChanger(ThemeData.light()),
       child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(

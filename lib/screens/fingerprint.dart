@@ -1,4 +1,4 @@
-import 'package:album_app/screens/dashboard_screen.dart';
+import 'package:album_app/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 
@@ -14,11 +14,10 @@ class FingerprintScreen extends StatelessWidget {
 
           if (weCanCheckBiometrics) {
             bool authenticated = await localAuth.authenticateWithBiometrics(
-              localizedReason: "Authenticate to your album gallery",
+              localizedReason: "Authenticate to see your album.",
             );
-            print(authenticated);
             if (authenticated) {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => DashboardScreen(),
@@ -36,7 +35,7 @@ class FingerprintScreen extends StatelessWidget {
               size: 124.0,
             ),
             Text(
-              "Touch to Authenticate",
+              "Touch to Login",
               style: TextStyle(
                 fontSize: 64.0,
               ),
